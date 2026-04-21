@@ -3,9 +3,9 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Star, ShoppingCart } from 'lucide-react'
 import { api } from '../lib/api'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/useCart'
 import { Button } from '../components/Button'
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../context/useAuth'
 
 export function ProductDetail() {
   const { id } = useParams()

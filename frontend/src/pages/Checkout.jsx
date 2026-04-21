@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { api } from '../lib/api'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/useCart'
 import { Button } from '../components/Button'
 
 export function Checkout() {

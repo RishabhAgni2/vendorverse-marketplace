@@ -1,8 +1,8 @@
 import { Link, NavLink } from 'react-router-dom'
 import { ShoppingCart, Store, Shield, LogOut } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useAuth } from '../context/AuthContext'
-import { useCart } from '../context/CartContext'
+import { useAuth } from '../context/useAuth'
+import { useCart } from '../context/useCart'
 import { Button } from './Button'
 
 function NavItem({ to, children }) {
@@ -22,7 +22,7 @@ function NavItem({ to, children }) {
 
 export function Navbar() {
   const { user, vendor, logout } = useAuth()
-  const { items, totalQty, lastAddedAt } = useCart()
+  const { totalQty, lastAddedAt } = useCart()
 
   return (
     <div className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-black/10 backdrop-blur-xl">

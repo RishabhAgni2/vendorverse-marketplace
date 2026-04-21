@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useCallback } from 'react'
 import { Search } from 'lucide-react'
 import { api } from '../lib/api'
 import { ProductCard } from '../components/ProductCard'
@@ -16,7 +16,7 @@ export function Home() {
     return ['', ...Array.from(set).sort()]
   }, [products])
 
-  async function load() {
+  const load = useCallback(async () => {
     setLoading(true)
     setError('')
     try {
@@ -30,12 +30,11 @@ export function Home() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [category, q])
 
   useEffect(() => {
     load()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [load])
 
   return (
     <div className="space-y-6">

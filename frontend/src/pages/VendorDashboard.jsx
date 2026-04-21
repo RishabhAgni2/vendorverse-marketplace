@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { api } from '../lib/api'
 import { Button } from '../components/Button'
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../context/useAuth'
 
 function TabButton({ active, children, ...props }) {
   return (
@@ -54,7 +54,6 @@ export function VendorDashboard() {
 
   useEffect(() => {
     loadAll()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function createProduct() {

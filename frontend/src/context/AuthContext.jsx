@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useEffect, useMemo, useState } from 'react'
 import { api } from '../lib/api'
 
 const AuthContext = createContext(null)
@@ -31,7 +31,6 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     refresh()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function login(email, password) {
@@ -63,8 +62,8 @@ export function AuthProvider({ children }) {
 }
 
 export function useAuth() {
-  const ctx = useContext(AuthContext)
-  if (!ctx) throw new Error('useAuth must be used inside AuthProvider')
-  return ctx
+  throw new Error('useAuth must be imported from context/useAuth')
 }
+
+export { AuthContext }
 

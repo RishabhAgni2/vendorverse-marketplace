@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Trash2 } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/useCart'
 import { Button } from '../components/Button'
 
 export function Cart() {
